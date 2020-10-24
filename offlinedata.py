@@ -52,7 +52,7 @@ def get_data_generator(df, indices, for_training, batch_size=16):
 #             im = im.resize((H, W))
             im = np.array(im) / 255.0
             images.append(np.array(im))
-            labels.append(np.array([np.array(to_categorical(int(i), N_LABELS)) for i in label]))
+            labels.append(np.array([np.array(to_categorical(toInt(i), N_LABELS)) for i in label]))
             if len(images) >= batch_size:
 #                 print(np.array(images), np.array(labels))
                 yield np.array(images), np.array(labels)

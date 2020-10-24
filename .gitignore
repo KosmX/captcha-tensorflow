@@ -44,6 +44,10 @@ pip-log.txt  # Installer logs
 
 # SVN
 .svn
+sub
 
 
 !PLACEHOLDER
+
+
+images

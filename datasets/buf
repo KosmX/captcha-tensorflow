@@ -1,0 +1,4 @@
+DATA_DIR = 'images/char-4-epoch-1/train'  # 302410 images. validate accuracy: 98.8%
+H, W, C = 100, 120, 3
+N_LABELS = 10
+D = 4

@@ -16,7 +16,7 @@ META_FILENAME = 'meta.json'
 def get_choices():
     choices = [
         (FLAGS.digit, map(str, range(10))),
-        (FLAGS.lower, string.ascii_lowercase),
+        (FLAGS.lower, 'abcdefghijklmnopqrstuvwyz'),
         (FLAGS.upper, string.ascii_uppercase),
         ]
     return tuple([i for is_selected, subset in choices for i in subset if is_selected])
@@ -28,7 +28,7 @@ def _gen_captcha(img_dir, num_per_image, n, width, height, choices):
     if not os.path.exists(img_dir):
         os.makedirs(img_dir)
 
-    image = ImageCaptcha(width=width, height=height)
+    image = ImageCaptcha(width=width, height=height, fonts=["klingon.ttf"])
 
     print('generating %s epoches of captchas in %s' % (n, img_dir))
     for _ in range(n):
@@ -49,8 +49,8 @@ def gen_dataset():
 
     choices = get_choices()
 
-    width = 40 + 20 * num_per_image
-    height = 100
+    width = 40 * num_per_image
+    height = 60
 
     # meta info
     meta = {

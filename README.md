@@ -1,5 +1,5 @@
 # Captcha Solving Using TensorFlow
-#modifide version. Included scripts, + reader for use
+
 
 ## Introduction
 
