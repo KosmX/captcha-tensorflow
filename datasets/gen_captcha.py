@@ -16,7 +16,7 @@ META_FILENAME = 'meta.json'
 def get_choices():
     choices = [
         (FLAGS.digit, map(str, range(10))),
-        (FLAGS.lower, 'abcdefghijklmnopqrstuvwyz'),
+        (FLAGS.lower, 'abcdefghijklmnopqrstuvwyz'), #no x in klingon
         (FLAGS.upper, string.ascii_uppercase),
         ]
     return tuple([i for is_selected, subset in choices for i in subset if is_selected])
